@@ -7,7 +7,7 @@
 4. Mehlule Sibenke CTH R157665R
 
 # Link to the WebApp
-https://astleytech-video-classification-inceptionv3model-app-teaxga.streamlit.app/#accident
+https://astleytech-inception-v3-model-video-classification-app-0uvtzt.streamlit.app/
 
 # Link to Google colab File: 
 https://colab.research.google.com/drive/1UVpVtRx6OuS-VAn2Hyco38GZ6QfM6-41?usp=sharing
