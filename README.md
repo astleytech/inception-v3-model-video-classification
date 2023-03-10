@@ -9,3 +9,4 @@
 https://astleytech-video-classification-inceptionv3model-app-teaxga.streamlit.app/#accident
 
 # Link to Google colab File: 
+https://colab.research.google.com/drive/1UVpVtRx6OuS-VAn2Hyco38GZ6QfM6-41?usp=sharing
