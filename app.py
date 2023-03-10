@@ -157,6 +157,6 @@ def main():
       st.subheader('The video is large for processing')
 
 if __name__ == '__main__':
-  st.title("Object Detection Using pretained inception V3 Deep Learning Model")
+  st.title("Object Detection Using pretrained inception V3 Deep Learning Model")
   st.subheader(' Upload a video with a maximum size of 2mb'.title())
   main()
