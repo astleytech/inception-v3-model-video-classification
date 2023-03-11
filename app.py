@@ -14,13 +14,6 @@ from pathlib import Path
 import shutil
 import streamlit as st
 from PIL import Image
-
-# Get the current working directory
-current_dir = os.getcwd()
-
-# Print the current working directory
-print(f"Current working directory: {current_dir}")
-
 # create directory of frames that have been splitted
 def create_dir(path):
   try:
