@@ -1,6 +1,7 @@
 import numpy as np
 import string
 import pickle
+import requests
 import os
 import cv2
 import glob
