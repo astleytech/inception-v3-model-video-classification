@@ -81,7 +81,7 @@ def processed_image(image_path):
   return tf.keras.applications.inception_v3.preprocess_input(img_array_expanded_dims)
 
 def saved_inception_v3(processed_image):
-  model = load_model('C:\Users\user\data\model.h5')
+  model = load_model('model.h5')
   prediction = new_model.predict(processed_image)
   return np.round(prediction)
 
