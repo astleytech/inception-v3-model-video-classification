@@ -98,8 +98,8 @@ def predictions(images):
 def selected_frames_path(image_path, image_name):
   source_path = image_path
   # creating the directory for selected frames
-  if not os.path.exists("https://drive.google.com/drive/folders/1a58bE77uQzOAW5Pvpe2Huf-G_3v_c9ST?usp=sharing"):
-    os.makedirs("https://drive.google.com/drive/folders/1a58bE77uQzOAW5Pvpe2Huf-G_3v_c9ST?usp=sharing")
+  if not os.path.exists("predict_2"):
+    os.makedirs("predict_2")
   destination_path = f"predict_2\\{image_name}"
   return source_path, destination_path
 
