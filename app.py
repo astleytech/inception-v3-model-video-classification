@@ -7,6 +7,7 @@ import cv2
 import glob
 import tempfile
 import tensorflow
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.inception_v3 import decode_predictions
 import tensorflow as tf
@@ -80,7 +81,7 @@ def processed_image(image_path):
   return tf.keras.applications.inception_v3.preprocess_input(img_array_expanded_dims)
 
 def saved_inception_v3(processed_image):
-  new_model = load_model('models/mode.h5')
+  model = load_model('C:\Users\user\data\model.h5')
   prediction = new_model.predict(processed_image)
   return np.round(prediction)
 
