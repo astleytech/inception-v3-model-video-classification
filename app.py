@@ -84,7 +84,8 @@ def saved_inception_v3(processed_image):
   response = requests.get(url)
   model = open('model.h5', 'wb')
   model.write(response.content)
-  prediction = model.predict(processed_image)
+  new_model = load_model(model)
+  prediction = new_model.predict(processed_image)
   return np.round(prediction)
 
 
