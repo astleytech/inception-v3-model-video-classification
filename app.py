@@ -1,13 +1,11 @@
 import numpy as np
 import string
 import pickle
-import requests
 import os
 import cv2
 import glob
 import tempfile
 import tensorflow
-from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.inception_v3 import decode_predictions
 import tensorflow as tf
@@ -81,12 +79,10 @@ def processed_image(image_path):
   return tf.keras.applications.inception_v3.preprocess_input(img_array_expanded_dims)
 
 def saved_inception_v3(processed_image):
-  model = load_model('model.h5')
-  prediction = new_model.predict(processed_image)
-  return np.round(prediction)
+  model = tensorflow.keras.applications.inception_v3.InceptionV3()
+  return model.predict(processed_image)
 
-
-# the function predict the objects within the video frames
+# the function predict the objects with in the video frames
 def predictions(images):
   prepared_image = processed_image(images)
   predictions = saved_inception_v3(prepared_image)
@@ -148,7 +144,7 @@ def main():
       if st.button('Search'):
 
         video_processor(video_file, user_input)
-        saved_frame_path = 'https://drive.google.com/drive/folders/1a58bE77uQzOAW5Pvpe2Huf-G_3v_c9ST?usp=sharing'
+        saved_frame_path = 'predict_2'
         if not dirIsEmpty(saved_frame_path):
           st.subheader(user_input)
           images = Path(saved_frame_path).glob('*.png')
@@ -162,5 +158,6 @@ def main():
 
 if __name__ == '__main__':
   st.title("Object Detection Using pretrained inception V3 Deep Learning Model")
-  st.subheader(' Upload a video with a maximum size of 2mb'.title())
+
+  st.subheader(' Upload a video, a maximum size of 2mb'.title())
   main()
