@@ -82,7 +82,7 @@ def processed_image(image_path):
 def saved_inception_v3(processed_image):
   url = 'https://drive.google.com/file/d/1RixJgwhCADm_CwYfCx18Aj7DUCMHUUnx/view?usp=share_link'  # Replace with the complete URL of your saved model
   response = requests.get(url)
-  model = open('my_model.h5', 'wb')
+  model = open('model.h5', 'wb')
   model.write(response.content)
   prediction = model.predict(processed_image)
   return np.round(prediction)
