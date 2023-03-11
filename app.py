@@ -6,6 +6,7 @@ import cv2
 import glob
 import tempfile
 import tensorflow
+from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.keras.applications.inception_v3 import decode_predictions
 import tensorflow as tf
