@@ -88,7 +88,7 @@ def saved_inception_v3(processed_image):
   return np.round(prediction)
 
 
-# the function predict the objects with in the video frames
+# the function predict the objects within the video frames
 def predictions(images):
   prepared_image = processed_image(images)
   predictions = saved_inception_v3(prepared_image)
@@ -100,8 +100,8 @@ def predictions(images):
 def selected_frames_path(image_path, image_name):
   source_path = image_path
   # creating the directory for selected frames
-  if not os.path.exists("predict_2"):
-    os.makedirs("predict_2")
+  if not os.path.exists("https://drive.google.com/drive/folders/1a58bE77uQzOAW5Pvpe2Huf-G_3v_c9ST?usp=sharing"):
+    os.makedirs("https://drive.google.com/drive/folders/1a58bE77uQzOAW5Pvpe2Huf-G_3v_c9ST?usp=sharing")
   destination_path = f"predict_2\\{image_name}"
   return source_path, destination_path
 
@@ -150,7 +150,7 @@ def main():
       if st.button('Search'):
 
         video_processor(video_file, user_input)
-        saved_frame_path = 'predict_2'
+        saved_frame_path = 'https://drive.google.com/drive/folders/1a58bE77uQzOAW5Pvpe2Huf-G_3v_c9ST?usp=sharing'
         if not dirIsEmpty(saved_frame_path):
           st.subheader(user_input)
           images = Path(saved_frame_path).glob('*.png')
