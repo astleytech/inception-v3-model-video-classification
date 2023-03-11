@@ -79,8 +79,10 @@ def processed_image(image_path):
   return tf.keras.applications.inception_v3.preprocess_input(img_array_expanded_dims)
 
 def saved_inception_v3(processed_image):
-  model = tensorflow.keras.applications.inception_v3.InceptionV3()
-  return model.predict(processed_image)
+  model = load_model('https://drive.google.com/file/d/1RixJgwhCADm_CwYfCx18Aj7DUCMHUUnx/view?usp=share_link')
+  prediction = model.predict(processed_image)
+  return  return np.round(prediction)
+
 
 # the function predict the objects with in the video frames
 def predictions(images):
