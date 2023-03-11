@@ -79,7 +79,7 @@ def processed_image(image_path):
   return tf.keras.applications.inception_v3.preprocess_input(img_array_expanded_dims)
 
 def saved_inception_v3(processed_image):
-  new_model = load_model('models/dog_vs_cat.h5')
+  new_model = load_model('models/model.h5')
   prediction = new_model.predict(processed_image)
   return np.round(prediction)
 
@@ -88,9 +88,9 @@ def predictions(images):
   prepared_image = processed_image(images)
   prediction = saved_inception_v3(prepared_image)
   if prediction == 0:
-    object_name = 'Cat'
+    object_name = 'non_accident'
   elif prediction == 1:
-    object_name = 'Dog'
+    object_name = 'accident'
   else:
     object_name = 'No Object'
 
@@ -155,7 +155,7 @@ def start_object_detection(file_size, video_file):
     if st.button('Search'):
       image_prediction_process(video_file, user_input)
   else:
-    st.subheader('The video is large for processing')
+    st.subheader('The video is too large for processing')
 
 def main():
   video_file = st.file_uploader('', type=["mp4"])
@@ -164,7 +164,7 @@ def main():
     start_object_detection(file_size, video_file)
 
 if __name__ == '__main__':
-  st.title("Cat and Dog Objects Detector".upper())
+  st.title("Object Detection Using pretrained inception V3 Deep Learning Model".upper())
 
   st.subheader('Video of max size 2mb required'.title())
   main()
